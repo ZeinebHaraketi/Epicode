@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="feel_the_burn.FXMLDocumentController">
+    <children>
+      <ImageView fitHeight="455.0" fitWidth="659.0" layoutX="-85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Interface_sport.jpg" />
+         </image>
+      </ImageView>
+        <Label fx:id="label" layoutX="166.0" layoutY="35.0" minHeight="16" minWidth="69" text="Accueil Produit" textFill="#00d5fc">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+        <Button fx:id="gerer_prod" layoutX="369.0" layoutY="93.0" onAction="#gerer_prod" prefHeight="59.0" prefWidth="173.0" text="                      Gérer Produit" />
+      <ImageView fitHeight="48.0" fitWidth="51.0" layoutX="379.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Prod_icon.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
