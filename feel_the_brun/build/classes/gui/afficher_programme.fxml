@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="scenePane" prefHeight="772.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Afficher_programmeController">
+   <children>
+      <TableView fx:id="table_prog" layoutX="151.0" layoutY="94.0" onMouseClicked="#click1" prefHeight="459.0" prefWidth="923.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="nom_p" prefWidth="75.0" text="Nom_p" />
+            <TableColumn fx:id="date_r" prefWidth="75.0" text="Date_r" />
+            <TableColumn fx:id="id_kine" prefWidth="75.0" text="id_kine" />
+            <TableColumn fx:id="id_c" prefWidth="118.0" text="id_c" />
+            <TableColumn fx:id="descript" prefWidth="118.0" text="description" />
+                     
+
+        </columns>
+      </TableView>
+      <Button fx:id="del_prog" layoutX="199.0" layoutY="41.0" mnemonicParsing="false" onAction="#supp_prog" prefHeight="45.0" prefWidth="131.0" text="Supprimer" />
+      <Button fx:id="modifier" cacheHint="QUALITY" layoutX="351.0" layoutY="43.0" onAction="#modifier_programme" prefHeight="45.0" prefWidth="131.0" text="modifier" />
+      <TextField fx:id="recherche" layoutX="625.0" layoutY="48.0" />
+      <Text fill="#282727" fontSmoothingType="LCD" layoutX="493.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rechercher :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <Button fx:id="rechercher" cacheHint="QUALITY" layoutX="828.0" layoutY="43.0" onAction="#rechercher_programme" prefHeight="45.0" prefWidth="131.0" text="rechercher" />
+      <Label layoutX="151.0" layoutY="598.0" prefHeight="21.0" prefWidth="78.0" text="nombre" />
+      <TextField fx:id="nb_occ" layoutX="244.0" layoutY="593.0" onKeyPressed="#nb_occ" />
+      <TextField fx:id="nb_occ2" layoutX="519.0" layoutY="593.0" prefHeight="31.0" prefWidth="78.0" />
+      <Label fx:id="time" layoutX="34.0" layoutY="16.0" prefHeight="55.0" prefWidth="131.0" text="time" />
+      <Button fx:id="exit" layoutX="588.0" layoutY="684.0" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="105.0" text="exit" />
+      <Button fx:id="video" layoutX="907.0" layoutY="607.0" mnemonicParsing="false" onAction="#video" style="-fx-background-color: #2F4F4F;" stylesheets="@../../../../Downloads/gestion-club-cit--master/gestion-club-cit--master/src/edu/gestionclub/gui/Style.css" text="REGARDER VIDEO" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="youtube" layoutX="366.0" layoutY="684.0" mnemonicParsing="false" onAction="#affiche_youtub" text="youtube" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLDocumentController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="596.0" prefWidth="879.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@ajouter_consultation.css" />
+         </stylesheets>
+         <children>
+            <AnchorPane id="AnchorPane" layoutY="-1.0" prefHeight="596.0" prefWidth="879.0">
+               <children>
+                  <ScrollPane layoutX="-14.0" layoutY="-3.0" prefHeight="605.0" prefWidth="893.0">
+                     <content>
+                        <Pane prefHeight="658.0" prefWidth="944.0">
+                           <children>
+                              <ImageView fitHeight="701.0" fitWidth="1019.0" layoutX="-30.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img1.jpg" />
+                                 </image>
+                              </ImageView>
+                              <TextField id="add_id" fx:id="id" layoutX="591.0" layoutY="71.0" />
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="540.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID :">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Text>
+                              <TextField id="add_nom" fx:id="nom_p" layoutX="591.0" layoutY="121.0" />
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="499.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom_p:">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="412.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date_rendevous">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="date" layoutX="591.0" layoutY="173.0" />
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="469.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id_kine:">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="413.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description  :">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Text>
+                              <TextArea fx:id="des" layoutX="583.0" layoutY="271.0" prefHeight="77.0" prefWidth="192.0" />
+                              <Button fx:id="ajouter" cacheHint="QUALITY" layoutX="202.0" layoutY="525.0" onAction="#ajouter_programme" prefHeight="45.0" prefWidth="131.0" text="Ajouter" />
+                              <Button fx:id="Afficher" layoutX="42.0" layoutY="525.0" mnemonicParsing="false" onAction="#afficher_programme" prefHeight="45.0" prefWidth="131.0" text="Afficher" />
+                              <Text fill="#bf772e" fontSmoothingType="LCD" layoutX="241.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajoueter programme">
+                                 <font>
+                                    <Font name="System Bold Italic" size="41.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="id_kine" layoutX="583.0" layoutY="219.0" />
+                              <TextField id="date" fx:id="id_c" layoutX="582.0" layoutY="387.0" />
+                              <Text fill="WHITE" fontSmoothingType="LCD" layoutX="467.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id_c :">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

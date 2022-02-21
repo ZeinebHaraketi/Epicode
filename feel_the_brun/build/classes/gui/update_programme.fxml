@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="663.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Update_programmeController">
+   <children>
+      <TextField id="add_id" fx:id="id" layoutX="751.0" layoutY="129.0" />
+      <Text fill="#030303" fontSmoothingType="LCD" layoutX="660.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TextField id="add_id" fx:id="nom" layoutX="751.0" layoutY="198.0" />
+      <Text fill="#030303" fontSmoothingType="LCD" layoutX="653.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom_p :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TextField id="add_id" fx:id="date_col" layoutX="751.0" layoutY="263.0" />
+      <Text fill="#030303" fontSmoothingType="LCD" layoutX="653.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date_R :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TextField id="add_id" fx:id="id_kine" layoutX="751.0" layoutY="318.0" />
+      <Text fill="#030303" fontSmoothingType="LCD" layoutX="653.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id_kine :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="des" layoutX="749.0" layoutY="376.0" prefHeight="77.0" prefWidth="192.0" />
+      <Text fill="#030303" fontSmoothingType="LCD" layoutX="594.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description  :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TextField id="add_id" fx:id="id_c" layoutX="754.0" layoutY="481.0" />
+      <Text fill="#030303" fontSmoothingType="LCD" layoutX="658.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id_c  :">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <Text fill="#bf772e" fontSmoothingType="LCD" layoutX="261.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modifier programme">
+         <font>
+            <Font name="System Bold Italic" size="41.0" />
+         </font>
+      </Text>
+      <Button fx:id="modifier" cacheHint="QUALITY" layoutX="261.0" layoutY="568.0" onAction="#modifier_programme" prefHeight="45.0" prefWidth="131.0" text="modifier" />
+   </children>
+</AnchorPane>
