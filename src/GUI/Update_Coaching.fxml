@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="792.0" prefWidth="1191.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="GUI.Update_CoachingController">
+   <children>
+      <TextField fx:id="Id_S" layoutX="768.0" layoutY="141.0" />
+      <Text layoutX="704.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id_S" />
+      <TextField fx:id="Date_S" layoutX="768.0" layoutY="197.0" />
+      <Text layoutX="695.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date_S" />
+      <TextField fx:id="Prix" layoutX="768.0" layoutY="246.0" />
+      <Text layoutX="705.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+      <TextField fx:id="Id_Co" layoutX="768.0" layoutY="297.0" />
+      <Text layoutX="696.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id_Co" />
+      <TextField fx:id="Nom_User" layoutX="768.0" layoutY="348.0" />
+      <TextField fx:id="Prenom_User" layoutX="768.0" layoutY="396.0" />
+      <Text layoutX="683.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom_User" />
+      <Text layoutX="671.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom_User" />
+      <Button fx:id="Valider_update_coaching" layoutX="817.0" layoutY="468.0" mnemonicParsing="false" onAction="#Valider_update_coaching" text="Valider" />
+   </children>
+</AnchorPane>

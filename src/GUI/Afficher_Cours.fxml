@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="784.0" prefWidth="1161.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Afficher_CoursController">
+   <children>
+      <TableView fx:id="tablecours" layoutX="59.0" layoutY="90.0" prefHeight="645.0" prefWidth="1019.0">
+        <columns>
+          <TableColumn fx:id="Afficher_Id_C" prefWidth="75.0" text="Id_C" />
+          <TableColumn fx:id="Afficher_Nom_C" prefWidth="75.0" text="Nom_C" />
+            <TableColumn fx:id="Afficher_Date_C" prefWidth="75.0" text="Date_C" />
+            <TableColumn fx:id="Afficher_Id_Co" prefWidth="75.0" text="Id_Co" />
+        </columns>
+      </TableView>
+      <Button fx:id="Supprimer_Cours" layoutX="59.0" layoutY="49.0" mnemonicParsing="false" onAction="#Supprimer_Cours" text="Supprimer" />
+      <Button fx:id="Modifier_Cours" layoutX="176.0" layoutY="49.0" mnemonicParsing="false" onAction="#Modifier_Cours" text="Modifier" />
+      <Text layoutX="419.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search box" />
+      <TextField fx:id="filterfield" layoutX="518.0" layoutY="49.0" prefHeight="31.0" prefWidth="298.0" />
+   </children>
+</AnchorPane>
