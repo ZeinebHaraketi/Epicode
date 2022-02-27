@@ -3,16 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Modifier_Activite.fxml</file>
             <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Afficher_BlogController.java</file>
-            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Modifier_commController.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/Services/CoursServices.java</file>
             <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Afficher_ActiviteController.java</file>
-            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Ajouter_Enfant.fxml</file>
-            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Modifier_blogController.java</file>
             <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Modifier_ActiviteController.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/Entities/Cours.java</file>
             <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Ajouter_EnfantController.java</file>
-            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/Entities/Commentaire.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Afficher_Cours.fxml</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/Services/CoachingServices.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/AjouterseancecoachingController.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/AjouterCoursController.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Afficher_CoursController.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/feeltheburn/AjouterseancecoachingController.java</file>
+            <file>file:/C:/Users/zeine/OneDrive/Bureau/feel_the_burn/src/GUI/Afficher_Coaching.fxml</file>
         </group>
     </open-files>
 </project-private>
