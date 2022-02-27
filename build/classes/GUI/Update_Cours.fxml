@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="823.0" prefWidth="1207.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="GUI.Update_CoursController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-19.0" layoutY="-12.0" prefHeight="882.0" prefWidth="1240.0">
+         <children>
+            <TextField fx:id="update_Id_C" layoutX="819.0" layoutY="193.0" />
+            <Text layoutX="767.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id_C" />
+            <TextField fx:id="update_Nom_C" layoutX="819.0" layoutY="248.0" />
+            <Text layoutX="757.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom_C" />
+            <TextField fx:id="update_Date__C" layoutX="819.0" layoutY="299.0" />
+            <Text layoutX="758.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date_C" />
+            <Text layoutX="757.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id_Co" />
+            <TextField fx:id="update_Id_Co" layoutX="819.0" layoutY="350.0" />
+            <Button fx:id="Valider_update_cours" layoutX="866.0" layoutY="429.0" mnemonicParsing="false" onAction="#Valider_update_cours" text="Valider" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
