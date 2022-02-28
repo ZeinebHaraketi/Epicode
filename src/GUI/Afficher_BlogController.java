@@ -40,7 +40,7 @@ import javafx.stage.Stage;
 public class Afficher_BlogController implements Initializable {
 
     @FXML
-    private TableView<Blog> table_blog;
+     TableView<Blog> table_blog;
      @FXML
     private TableColumn<Blog, Integer> Id_aff;
     @FXML
@@ -78,7 +78,8 @@ public class Afficher_BlogController implements Initializable {
                auteur_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getAuteur()));
                image_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getImage() ));
                contenu_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getContenu() ));
-               categorie_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getcategorie() ));
+               //categorie_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getcategorie() ));
+               categorie_aff.setText(bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getcategorie());
                date_aff.setText(bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getDate());
                //image_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getImage() ));
               // contenu_aff.setText((bs.liste2().get(table_blog.getSelectionModel().getSelectedIndex()).getContenu() ));
@@ -98,10 +99,12 @@ public class Afficher_BlogController implements Initializable {
                      image_aff.setCellValueFactory(new PropertyValueFactory<>("Image"));
                      //date_aff.setCellValueFactory(new PropertyValueFactory<>("Date"));
                      //image_aff.setCellValueFactory(new PropertyValueFactory<>("Image"));
-                     contenu_aff.setCellValueFactory(new PropertyValueFactory<>("Contenu"));
+                     contenu_aff.setCellValueFactory(new PropertyValueFactory<>("Contenu"));                
                      categorie_aff.setCellValueFactory(new PropertyValueFactory<>("categorie"));
                      date_aff.setCellValueFactory(new PropertyValueFactory<>("Date"));
                      table_blog.setItems(list);
+                   
+                     
                    // Wrap the ObservableList in a FilteredList (initially display all data).
         FilteredList<Blog> filteredData = new FilteredList<>(list, b -> true);
 		
@@ -140,8 +143,11 @@ public class Afficher_BlogController implements Initializable {
 		
 		// 5. Add sorted (and filtered) data to the table.
 		table_blog.setItems(sortedData);
+                
+                
                  } catch (SQLException ex) {
             Logger.getLogger(Afficher_BlogController.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         
     }    
@@ -153,6 +159,7 @@ public class Afficher_BlogController implements Initializable {
     {
        bs.supprimerBlog( table_blog.getSelectionModel().getSelectedItem().getId_b());
         System.out.println(table_blog.getSelectionModel().getSelectedItem().getId_b());
+       
     }
 
     @FXML
@@ -165,6 +172,8 @@ public class Afficher_BlogController implements Initializable {
         delete();
         table_blog.getItems().removeAll(table_blog.getSelectionModel().getSelectedItem());
         System.out.println(table_blog);
+        table_blog.refresh();
+        
     }
 
    private void update_blog(ActionEvent event) throws IOException {

@@ -22,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import GUI.Afficher_CommentaireController;
 
 
 public class Modifier_commController implements Initializable {
@@ -118,6 +119,19 @@ public class Modifier_commController implements Initializable {
 
     @FXML
     private void afficher_com(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Commentaire.fxml"));
+        //Afficher_ActiviteController ac = loader.getController();
+        //Afficher_ActiviteController aac = new Afficher_ActiviteController();
+        //aac.tab_act.refresh();
+         try{
+            Parent root = loader.load();
+           Afficher_CommentaireController ac = loader.getController();
+           Id_mod.getScene().setRoot(root);
+           ac. table_comm.refresh();
+        }
+        catch(IOException ex){
+           System.out.println(ex.getMessage());
+       }
     }
 
     @FXML

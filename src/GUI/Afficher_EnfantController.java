@@ -50,7 +50,7 @@ import javafx.stage.Stage;
 public class Afficher_EnfantController implements Initializable {
 
     @FXML
-    private TableView<Enfant> tab_enf;
+     TableView<Enfant> tab_enf;
     @FXML
     private TableColumn<Enfant, Integer> aff_ide;
     @FXML
@@ -125,6 +125,7 @@ public class Afficher_EnfantController implements Initializable {
          delete();
         tab_enf.getItems().removeAll(tab_enf.getSelectionModel().getSelectedItem());
         System.out.println(tab_enf);
+        tab_enf.refresh();
     }
 
     @FXML

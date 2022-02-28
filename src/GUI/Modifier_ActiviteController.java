@@ -87,8 +87,9 @@ public class Modifier_ActiviteController implements Initializable {
 
     @FXML
     private void modifier_act(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader();
+            FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("Afficher_Activite.fxml"));
+           // FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Activite.fxml"));
             Stage prStage = new Stage();
             Parent root= loader.load();
             Scene scene = new Scene(root);
@@ -105,19 +106,34 @@ public class Modifier_ActiviteController implements Initializable {
             a.setType(mod_type.getText());
             a.setId_enfant(Integer.parseInt(mod_ide.getText()));
             
-            as.modifier(a, id);
+           as.modifier(a, id);
+           //as.updateActivite(Integer.valueOf(mod_ida.getText()),mod_nom.getText(),Integer.valueOf(mod_cat.getText()),mod_type.getText(),Integer.valueOf(mod_ide.getText()));
              Alert alert = new Alert (Alert.AlertType.INFORMATION);
              alert.setTitle("succes");
              alert.setHeaderText("!!! Modification effectuer avec suucces !!!");
              alert.setContentText("succes");
              alert.showAndWait();
             
-             
+         ac.refresh_act(event);
        
     }
 
     @FXML
     private void afficher_act(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Activite.fxml"));
+        //Afficher_ActiviteController ac = loader.getController();
+        //Afficher_ActiviteController aac = new Afficher_ActiviteController();
+        //aac.tab_act.refresh();
+         try{
+            Parent root = loader.load();
+           Afficher_ActiviteController ac = loader.getController();
+           mod_ida.getScene().setRoot(root);
+           ac.tab_act.refresh();
+        }
+        catch(IOException ex){
+           System.out.println(ex.getMessage());
+       }
+        
     }
     
 }

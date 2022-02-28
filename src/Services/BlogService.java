@@ -160,6 +160,7 @@ public class BlogService {
        }
        catch (SQLException ex) {
             System.out.println(ex.getMessage());
+            
         }   
     return list; 
     }
@@ -181,6 +182,7 @@ public class BlogService {
             Bloglist.add(Blogs);
 
         }
+        
          return Bloglist;    
     }
          

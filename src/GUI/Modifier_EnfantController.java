@@ -117,6 +117,19 @@ public class Modifier_EnfantController implements Initializable {
 
     @FXML
     private void afficher_enfant(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Enfant.fxml"));
+        //Afficher_ActiviteController ac = loader.getController();
+        //Afficher_ActiviteController aac = new Afficher_ActiviteController();
+        //aac.tab_act.refresh();
+         try{
+            Parent root = loader.load();
+           Afficher_EnfantController ac = loader.getController();
+           mod_ide1.getScene().setRoot(root);
+           ac.tab_enf.refresh();
+        }
+        catch(IOException ex){
+           System.out.println(ex.getMessage());
+       }
     }
     
 }

@@ -39,7 +39,7 @@ import javafx.stage.Stage;
 public class Afficher_CoursController implements Initializable {
 
     @FXML
-    private TableView<Cours> tablecours;
+     TableView<Cours> tablecours;
     @FXML
     private TableColumn<Cours, Integer> Afficher_Id_C;
     @FXML
@@ -155,6 +155,7 @@ public class Afficher_CoursController implements Initializable {
         delete();
         tablecours.getItems().removeAll(tablecours.getSelectionModel().getSelectedItem());
         System.out.println(tablecours);
+        tablecours.refresh();
     }
 
     @FXML

@@ -46,7 +46,7 @@ public class Afficher_ActiviteController implements Initializable {
     @FXML
     private VBox vbox_act;
     @FXML
-    private TableView<Activite> tab_act;
+     TableView<Activite> tab_act;
     @FXML
     private TableColumn<Activite,Integer> aff_id_a;
     @FXML
@@ -63,8 +63,6 @@ public class Afficher_ActiviteController implements Initializable {
     private Button upd_act;
     @FXML
     private Button sort_act;
-    @FXML
-    private Button refresh_act;
     @FXML
     private Button search_act;
 
@@ -85,6 +83,8 @@ public class Afficher_ActiviteController implements Initializable {
     public static String idxx;
     @FXML
     private TextField rech_act;
+    @FXML
+    private Button count_act;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -181,6 +181,7 @@ public class Afficher_ActiviteController implements Initializable {
         delete();
         tab_act.getItems().removeAll(tab_act.getSelectionModel().getSelectedItem());
         System.out.println(tab_act);
+        tab_act.refresh();
     }
     
     public void delete()
@@ -196,10 +197,10 @@ public class Afficher_ActiviteController implements Initializable {
         tab_act.sort();
     }
 
-    @FXML
-    private void refresh_act(ActionEvent event) {
+    void refresh_act(ActionEvent event) {
        
         tab_act.refresh();
+        
     }
 
     @FXML
@@ -256,6 +257,7 @@ public class Afficher_ActiviteController implements Initializable {
             
             tab_act.setItems(as.getActiviteslistnew());
             System.out.println(as.getActiviteslistnew());
+            
         }
         
         
@@ -276,6 +278,20 @@ public class Afficher_ActiviteController implements Initializable {
                 prStage.setScene(scene);
                 prStage.show();
                 tab_act.refresh();
+                
+    }
+
+    @FXML
+    private void Count_act(ActionEvent event) throws SQLException {
+        /*
+        //ObservableList<ObservableList> rows = dbController.queryRows(tableName);
+        ObservableList<ObservableList> rows = as.getCountAct(tab_act);
+        rows.forEach(row -> System.out.println(row));
+         System.out.println();
+         TableView<ObservableList> tableView = new TableView<>();
+          tableView.getItems().addAll(rows);
+*/
+        
     }
 
            

@@ -36,7 +36,7 @@ import javafx.stage.Stage;
 public class Afficher_CommentaireController implements Initializable {
 
     @FXML
-    private TableView<Commentaire> table_comm;
+     TableView<Commentaire> table_comm;
     @FXML
     private TableColumn<Commentaire,Integer> Id_aff;
     @FXML
@@ -112,6 +112,7 @@ public class Afficher_CommentaireController implements Initializable {
         delete();
         table_comm.getItems().removeAll(table_comm.getSelectionModel().getSelectedItem());
         System.out.println(table_comm);
+        table_comm.refresh();
     }
 
     @FXML

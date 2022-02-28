@@ -22,6 +22,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import GUI.Afficher_CoursController;
 
 /**
  * FXML Controller class
@@ -40,6 +41,8 @@ public class Update_CoursController implements Initializable {
     private TextField update_Id_Co;
     @FXML
     private Button Valider_update_cours;
+    @FXML
+    private Button afficher_cours;
 
     /**
      * Initializes the controller class.
@@ -98,6 +101,23 @@ public class Update_CoursController implements Initializable {
              alert.setHeaderText("!!! Modification effectuer avec suucces !!!");
              alert.setContentText("succes");
              alert.showAndWait();
+    }
+
+    @FXML
+    private void afficher_cours(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Cours.fxml"));
+        //Afficher_ActiviteController ac = loader.getController();
+        //Afficher_ActiviteController aac = new Afficher_ActiviteController();
+        //aac.tab_act.refresh();
+         try{
+            Parent root = loader.load();
+           Afficher_CoursController ac = loader.getController();
+           update_Id_C.getScene().setRoot(root);
+           ac.tablecours.refresh();
+        }
+        catch(IOException ex){
+           System.out.println(ex.getMessage());
+       }
     }
     
 }

@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
 
 public class ActiviteService implements IActiviteService<Activite>{
     Connection mc;
@@ -392,4 +393,53 @@ public class ActiviteService implements IActiviteService<Activite>{
           }
 
          }
+     //----------------------------------- Count Rows --------------------------------------------------------//
+     /*
+      ObservableList<ObservableList> queryRows(String tableName) {
+        String sql = "SELECT * from " + tableName;
+        ObservableList<Activite> Activitelist = FXCollections.observableArrayList();
+        try (
+                ste = mc.prepareStatement("SELECT * from " + tableName;);
+            ResultSet rs = ste.executeQuery();
+            while (rs.next()) {
+                ObservableList<Activite> list = FXCollections.observableArrayList();
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                    list.add(rs.getString(i));
+                }
+                Activitelist.add(list);
+            }
+            rs.close();
+        } catch (SQLException rowQueryException) {
+            System.err.println(rowQueryException.toString());
+        }
+        return rows;
+    }*/
+     
+     public ObservableList<ObservableList> getCountAct(TableView TableName) throws SQLException
+    {
+        ObservableList<ObservableList> Activitelist = FXCollections.observableArrayList();
+        
+        List <Activite> lista = new ArrayList<>(); 
+        Statement st= mc.createStatement();
+       // String query = "select id_a, nom_a, cat_age, type, id_enfant from activite";
+        String query = "SELECT * from " + TableName;
+        ResultSet rs;
+        rs = st.executeQuery(query);
+        Activite activites;
+        while (rs.next()) {
+            
+             ObservableList<Activite> row = FXCollections.observableArrayList();
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+                    row.add(new Activite(rs.getInt("id_a"),rs.getString("nom_a"),rs.getInt("cat_age"),rs.getString("type"),rs.getInt("id_enfant")));
+                    
+                }
+             Activitelist.add(row);
+          // activites= new Activite(rs.getInt("id_a"), rs.getString("nom_a"), rs.getInt("cat_age"),rs.getString("type"),rs.getInt("id_enfant") );  
+            //System.out.println(events);
+           // Activitelist.add(activites);
+          
+
+        }
+         return Activitelist;    
+    }
 }

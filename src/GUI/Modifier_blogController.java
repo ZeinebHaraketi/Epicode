@@ -23,6 +23,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import GUI.Afficher_BlogController;
 
 /**
  * FXML Controller class
@@ -49,6 +50,8 @@ public class Modifier_blogController implements Initializable {
     private Button modifier;
     @FXML
     private Button retour_blog;
+    @FXML
+    private Button aff_mod_blog;
 
     /**
      * Initializes the controller class.
@@ -121,5 +124,22 @@ public class Modifier_blogController implements Initializable {
               Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
               stage.setScene(scene);
               stage.show();
+    }
+
+    @FXML
+    private void afficher_blog(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Blog.fxml"));
+        //Afficher_ActiviteController ac = loader.getController();
+        //Afficher_ActiviteController aac = new Afficher_ActiviteController();
+        //aac.tab_act.refresh();
+         try{
+            Parent root = loader.load();
+           Afficher_BlogController ac = loader.getController();
+           Id_bmod.getScene().setRoot(root);
+           ac.table_blog.refresh();
+        }
+        catch(IOException ex){
+           System.out.println(ex.getMessage());
+       }
     }
 }

@@ -44,6 +44,8 @@ public class Update_CoachingController implements Initializable {
     private TextField Prenom_User;
     @FXML
     private Button Valider_update_coaching;
+    @FXML
+    private Button afficher_co;
 
     /**
      * Initializes the controller class.
@@ -106,6 +108,23 @@ public class Update_CoachingController implements Initializable {
              alert.setHeaderText("!!! Modification effectuer avec suucces !!!");
              alert.setContentText("succes");
              alert.showAndWait();
+    }
+
+    @FXML
+    private void afficher_co(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_Coaching.fxml"));
+        //Afficher_ActiviteController ac = loader.getController();
+        //Afficher_ActiviteController aac = new Afficher_ActiviteController();
+        //aac.tab_act.refresh();
+         try{
+            Parent root = loader.load();
+           Afficher_CoachingController ac = loader.getController();
+           Id_S.getScene().setRoot(root);
+           ac.table_Coaching.refresh();
+        }
+        catch(IOException ex){
+           System.out.println(ex.getMessage());
+       }
     }
     
 }

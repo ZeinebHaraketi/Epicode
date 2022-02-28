@@ -36,7 +36,7 @@ import javafx.stage.Stage;
 public class Afficher_CoachingController implements Initializable {
 
     @FXML
-    private TableView<Coaching> table_Coaching;
+     TableView<Coaching> table_Coaching;
     @FXML
     private TableColumn<Coaching, Integer> afficher_Id_S;
     @FXML
@@ -118,6 +118,7 @@ public class Afficher_CoachingController implements Initializable {
          delete();
         table_Coaching.getItems().removeAll(table_Coaching.getSelectionModel().getSelectedItem());
         System.out.println(table_Coaching);
+        table_Coaching.refresh();
     }
 
     @FXML
