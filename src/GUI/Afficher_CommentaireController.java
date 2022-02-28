@@ -10,9 +10,12 @@ import Entities.Commentaire;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,11 +24,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -56,12 +66,23 @@ public class Afficher_CommentaireController implements Initializable {
     @FXML
     private Button modifier;
     public static String idxx;
+    @FXML
+    private AnchorPane scenePane;
+    @FXML
+    private Label datee;
+    @FXML
+    private Button exit;
+    @FXML
+    private TextField Date_occ;
+    @FXML
+    private TextField nb_occ;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Timenow();
         CommentaireService cs= new CommentaireService();
         
         table_comm.setOnMouseClicked(new EventHandler<MouseEvent>(){
@@ -127,6 +148,51 @@ public class Afficher_CommentaireController implements Initializable {
                 Scene scene = new Scene(root);
                 prStage.setScene(scene);
                 prStage.show();
+    }
+
+    
+    
+    private volatile boolean stop = false;
+    private void Timenow() {
+        Thread thread = new Thread (() -> {
+         SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm:ss a");
+         while (!stop) {
+             try {
+                 Thread.sleep(1000);
+         } catch(Exception e) {
+             System.out.println(e);
+         }
+             final String timenow = sdf.format(new Date());
+             Platform.runLater(() -> {
+             datee.setText(timenow); 
+             } );
+         }
+        }
+        );
+        thread.start();
+    
+    }
+    Stage stage;
+    @FXML
+    private void exit(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You're about to logout!");
+        alert.setContentText("do you want to logout ?");
+        if(alert.showAndWait().get() == ButtonType.OK) {
+        stage = (Stage) scenePane.getScene().getWindow();
+        System.out.println("you successfully logged out ");
+        stop = true;
+        stage.close();}
+    }
+
+    @FXML
+    private void Date_occ(KeyEvent event) {
+         CommentaireService bs= new CommentaireService();
+                      String k = null;
+                      if (event.getCode().equals(KeyCode.ENTER)){
+                      k=(Date_occ.getText());
+                      nb_occ.setText(bs.calculer_nbseance(k));}
     }
     
 }

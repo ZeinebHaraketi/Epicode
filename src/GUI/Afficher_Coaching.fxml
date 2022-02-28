@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,5 +34,18 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Label layoutX="670.0" layoutY="299.0" text="Prix_Total" textFill="#f2eded">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Total" layoutX="763.0" layoutY="296.0" />
+      <TextField fx:id="Date" layoutX="763.0" layoutY="358.0" onKeyPressed="#Date" />
+      <Label layoutX="687.0" layoutY="463.0" text="nom_occurence" textFill="#fdf9f9">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nom_occ" layoutX="802.0" layoutY="460.0" onKeyPressed="#nom_occ" />
    </children>
 </AnchorPane>

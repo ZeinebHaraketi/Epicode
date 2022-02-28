@@ -10,9 +10,16 @@ import Entities.Produit;
 import Services.PanierService;
 import Services.ProduitService;
 import static GUI.Afficher_ProduitController.idxx;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
+import javafx.application.Platform;
+import java.util.Date;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,8 +36,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
- 
+ import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 
 /**
  *
@@ -53,11 +67,21 @@ public class Afficher_PanierController implements Initializable {
     @FXML
     private Button supp_pan;
      public static String idxx;
+    @FXML
+    private Button exit;
+    @FXML
+    private TextField nb_occ;
+    @FXML
+    private TextField nb_occ2;
+    @FXML
+    private Label date;
+    @FXML
+    private AnchorPane scenePane;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        Timenow();
         PanierService ps= new PanierService();
         
         tab_pan.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -126,6 +150,58 @@ public void delete()
 
     @FXML
     private void list_pan(MouseEvent event) {
+    }
+
+     Stage stage;
+    @FXML
+    private void exit(ActionEvent event) {
+         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You're about to logout!");
+        alert.setContentText("do you want to logout ?");
+        if(alert.showAndWait().get() == ButtonType.OK) {
+        stage = (Stage) scenePane.getScene().getWindow();
+    
+        System.out.println("you successfully logged out ");
+        stop = true;
+        stage.close();}
+    }
+
+    //Date hedhi lwakt
+   private volatile boolean stop = false;
+    private void Timenow() {
+        Thread thread = new Thread (() -> {
+         SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm:ss a");
+         while (!stop) {
+             try {
+                 Thread.sleep(1000);
+         } catch(Exception e) {
+             System.out.println(e);
+         }
+             final String timenow = sdf.format(new Date());
+             Platform.runLater(() -> {
+             date.setText(timenow); 
+             } );
+         }
+        }
+        );
+        thread.start();
+    
+    }
+    
+    @FXML
+    private void nb_occ(KeyEvent event) {
+        PanierService bs= new PanierService();
+        
+                      String k = null;
+                      if (event.getCode().equals(KeyCode.ENTER)){
+                      k=(nb_occ.getText());
+                      nb_occ2.setText(bs.calculer_nbcoupon(k));}
+      
+    }
+
+    @FXML
+    private void nb_occ2(KeyEvent event) {
     }
     
 }

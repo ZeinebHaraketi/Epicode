@@ -4,12 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Afficher_CommentaireController">
+<AnchorPane id="AnchorPane" fx:id="scenePane" prefHeight="606.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Afficher_CommentaireController">
    <children>
       <ImageView fitHeight="620.0" fitWidth="912.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -27,7 +28,7 @@
             <TableColumn fx:id="b_aff" prefWidth="108.0" text="Id_b" />
         </columns>
       </TableView>
-      <Button fx:id="supprimer" layoutX="608.0" layoutY="524.0" mnemonicParsing="false" onAction="#supprimer_com" prefHeight="38.0" prefWidth="149.0" text="Supprimer" textFill="#e40c0c">
+      <Button fx:id="supprimer" layoutX="608.0" layoutY="524.0" mnemonicParsing="false" onAction="#supprimer_com" prefHeight="25.0" prefWidth="148.0" text="Supprimer" textFill="#e40c0c">
          <font>
             <Font name="Arial Black" size="20.0" />
          </font>
@@ -37,10 +38,22 @@
             <Font name="Arial Black" size="19.0" />
          </font>
       </Button>
-      <Label layoutX="246.0" layoutY="14.0" text="Afficher Commentaire" textFill="#e6990a">
+      <Label fx:id="datee" layoutX="811.0" layoutY="31.0" text="Date" textFill="#f4f3f3">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="exit" layoutX="14.0" layoutY="567.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="62.0" text="exit">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="124.0" layoutY="33.0" text="Nb d'occ Date:" textFill="#f8f3f3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Date_occ" layoutX="223.0" layoutY="29.0" onKeyPressed="#Date_occ" />
+      <TextField fx:id="nb_occ" layoutX="379.0" layoutY="30.0" prefHeight="25.0" prefWidth="35.0" />
    </children>
 </AnchorPane>

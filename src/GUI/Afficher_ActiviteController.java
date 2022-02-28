@@ -17,12 +17,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -35,7 +38,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -61,10 +67,6 @@ public class Afficher_ActiviteController implements Initializable {
     private Button del_act;
     @FXML
     private Button upd_act;
-    @FXML
-    private Button sort_act;
-    @FXML
-    private Button search_act;
 
     ObservableList<Activite> act;
     String query = null;
@@ -85,12 +87,18 @@ public class Afficher_ActiviteController implements Initializable {
     private TextField rech_act;
     @FXML
     private Button count_act;
+    @FXML
+    private TextField nom_occ;
+    @FXML
+    private TextField nb_occ;
+    @FXML
+    private Label time;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TO DO
         //loadData();
-        
+        Timenow();
         ActiviteService as= new ActiviteService();
         
         tab_act.setOnMouseClicked(new EventHandler<MouseEvent>(){
@@ -192,7 +200,6 @@ public class Afficher_ActiviteController implements Initializable {
 
     
    
-    @FXML
     private void sort_act(ActionEvent event) {
         tab_act.sort();
     }
@@ -203,7 +210,6 @@ public class Afficher_ActiviteController implements Initializable {
         
     }
 
-    @FXML
     private void search_act(ActionEvent event) {
         ActiviteService as = new ActiviteService();
         as.displayByID(a.getId_a());
@@ -294,6 +300,38 @@ public class Afficher_ActiviteController implements Initializable {
         
     }
 
+    @FXML
+    private void nom_occ(KeyEvent event) {
+       ActiviteService bs= new ActiviteService();
+                      String k = null;
+                      if (event.getCode().equals(KeyCode.ENTER)){
+                      k=(nom_occ.getText());
+                      nb_occ.setText(bs.calculer_nbAct(k));}
+
+    }
+    
+  
+//-------------------------------- Time -------------------------------------------------------//
+    private volatile boolean stop = false;
+    private void Timenow() {
+        Thread thread = new Thread (() -> {
+         SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm:ss a");
+         while (!stop) {
+             try {
+                 Thread.sleep(1000);
+         } catch(Exception e) {
+             System.out.println(e);
+         }
+             final String timenow = sdf.format(new Date());
+             Platform.runLater(() -> {
+             time.setText(timenow); 
+             } );
+         }
+        }
+        );
+        thread.start();
+    
+    }
            
 
     

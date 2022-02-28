@@ -42,6 +42,10 @@ public class FXMLDocumentController implements Initializable {
     private Button gerer_produit;
     @FXML
     private Button gerer_panier;
+    @FXML
+    private Button gerer_consult;
+    @FXML
+    private Button gerer_prog;
     
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -119,6 +123,24 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void gerer_produit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Ajouter_Produit.fxml"));
+              Scene scene = new Scene(root);
+              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+              stage.setScene(scene);
+              stage.show();
+    }
+
+    @FXML
+    private void gerer_consult(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ajouter_consultation.fxml"));
+              Scene scene = new Scene(root);
+              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+              stage.setScene(scene);
+              stage.show();
+    }
+
+    @FXML
+    private void gerer_prog(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("ajouter_programme.fxml"));
               Scene scene = new Scene(root);
               Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
               stage.setScene(scene);

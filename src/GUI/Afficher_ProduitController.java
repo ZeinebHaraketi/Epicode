@@ -34,6 +34,11 @@ import  GUI.Ajouter_ProduitController;
 import static java.util.Collections.list;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import static java.util.Collections.list;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 /**
  * FXML Controller class
@@ -63,6 +68,8 @@ public class Afficher_ProduitController implements Initializable {
    // Ajouter_ProduitController apc= new Ajouter_ProduitController();
     @FXML
     private TextField recherche;
+    @FXML
+    private TextField total;
     
 
     /**
@@ -187,6 +194,20 @@ public class Afficher_ProduitController implements Initializable {
     @FXML
     private void recherche_p(ActionEvent event) {
     }
+
+    @FXML
+    private void total(KeyEvent event) throws SQLException {
+         if (event.getCode().equals(KeyCode.ENTER)){
+                        ProduitService bs= new ProduitService();
+                       ObservableList <Produit> list;
+                       list = bs.getProduitList();
+                       total.setText(bs.prixtotal().toString());
+                       //setText(as.getPrixbyID(id).toString());
+                       //Coaching co= new Coaching();
+                       
+                       // nom_occ.setText(k);
+    }
+}
 }
 
 

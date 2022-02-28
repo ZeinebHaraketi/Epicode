@@ -24,7 +24,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -52,6 +55,12 @@ public class Afficher_CoachingController implements Initializable {
     @FXML
     private Button Modifier_Coaching;
     public static String idxx;
+    @FXML
+    private TextField Total;
+    @FXML
+    private TextField Date;
+    @FXML
+    private TextField nom_occ;
     public void delete()
     {
         CoachingServices cs=new CoachingServices();
@@ -140,4 +149,27 @@ public class Afficher_CoachingController implements Initializable {
                 prStage.setScene(scene);
                 prStage.show();
     }
+
+    @FXML
+    private void Date(KeyEvent event) {
+         CoachingServices bs= new CoachingServices();
+                      String k = null;
+                      if (event.getCode().equals(KeyCode.ENTER)){
+                      k=(Date.getText());
+                      nom_occ.setText(bs.calculer_nbseance(k));}
+    }
+
+    @FXML
+    private void nom_occ(KeyEvent event) throws SQLException {
+         if (event.getCode().equals(KeyCode.ENTER)){
+                        CoachingServices bs= new CoachingServices();
+                       ObservableList <Coaching> list;
+                       list = bs.getCoachingList();
+                       Total.setText(String.valueOf(bs.prixtotal()));
+                       //setText(as.getPrixbyID(id).toString());
+                       //Coaching co= new Coaching();
+                       
+                       // nom_occ.setText(k);
+    }
+}
 }

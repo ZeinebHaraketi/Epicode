@@ -34,5 +34,16 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Label layoutX="96.0" layoutY="459.0" text="Recherche:" textFill="#f6f3f3">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="459.0" text="Total" textFill="#fbf6f6">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="total" layoutX="511.0" layoutY="455.0" onKeyPressed="#total" />
    </children>
 </AnchorPane>

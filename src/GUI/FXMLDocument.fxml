@@ -79,6 +79,18 @@
                               <Image url="@../Assets/produit_icon.png" />
                            </image>
                         </ImageView>
+                        <Button fx:id="gerer_consult" layoutX="590.0" layoutY="268.0" mnemonicParsing="false" onAction="#gerer_consult" prefHeight="52.0" prefWidth="190.0" text="                   Gestion Consultation" />
+                        <Button fx:id="gerer_prog" layoutX="590.0" layoutY="334.0" mnemonicParsing="false" onAction="#gerer_prog" prefHeight="52.0" prefWidth="190.0" text="                   Gestion Programme" />
+                        <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="599.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/consult_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" layoutX="600.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/programme_icon.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
               </content>
