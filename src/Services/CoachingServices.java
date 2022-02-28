@@ -299,4 +299,22 @@ if (rowsUpdated > 0) {
           }
 
          }
+     //------------------------------------------ NB Seances -----------------------------------------------//
+      public String calculer_nbseance(String Date_S) {
+        String l = null ;
+        String requete ="SELECT COUNT(*) FROM coaching where Date_S='"+Date_S+"'"; 
+        try {
+           
+           Statement st =mc.createStatement();
+           ResultSet rs=st.executeQuery(requete);
+           if (rs.next()){
+          String chaine = String.valueOf(rs.getString(1));
+          l=chaine;
+            return l;}
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+      return l;
+    }
 }

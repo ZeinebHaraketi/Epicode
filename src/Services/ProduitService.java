@@ -284,5 +284,20 @@ public class ProduitService {
           }
 
          }
+     
+     //------------------------------------ prix Total ---------------------------------------------------//
+     public Integer prixtotal() throws SQLException {
+        int total = 0;
+        PreparedStatement pt1 = mc.prepareStatement("SELECT sum(Prix) FROM produit");
+        try{
+        ResultSet rs1 = pt1.executeQuery();
+        while (rs1.next()) {
+            total = (int) rs1.getFloat(1);
+        }
+        }catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } 
+                return total;
+    }
     
 }

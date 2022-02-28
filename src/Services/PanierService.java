@@ -264,4 +264,22 @@ public class PanierService {
           }
 
          }
+     
+       public String calculer_nbcoupon(String Coupon) {
+        String l = null ;
+        String requete ="SELECT COUNT(*) FROM panier where Coupon='"+Coupon+"'"; 
+        try {
+           
+           Statement st =mc.createStatement();
+           ResultSet rs=st.executeQuery(requete);
+           if (rs.next()){
+          String chaine = String.valueOf(rs.getString(1));
+          l=chaine;
+            return l;}
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+      return l;
+    }
 }

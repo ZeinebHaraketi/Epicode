@@ -373,11 +373,7 @@ public class ActiviteService implements IActiviteService<Activite>{
      //------------------------------------------ Update 3 -------------------------------------------------------------//
      public void modifier(Activite a ,int id) {
            try {
-              /*ste =mc.prepareStatement(
-                      "UPDATE produit SET photo = ?, poids = ?," + " prix = ?, desription = ?, categorie = ?, " + " libelle = ? WHERE id = ?");*/
-              
-             // ste= mc.prepareStatement("UPDATE activite SET nom_a= '"+a.getNom_a()+"' ,cat_age= ''"+a.getCat_age()+"' , " + " type= '"+a.getType()+"'," + " id_enfant='"+a.getId_enfant()+"' where id_a =?");
-              
+             
               ste= mc.prepareStatement("UPDATE activite SET nom_a=? ,cat_age=? ,type=?,id_enfant=? where id_a =?");
               System.out.println(ste);
      ste.setString(1, a.getNom_a());
@@ -441,5 +437,24 @@ public class ActiviteService implements IActiviteService<Activite>{
 
         }
          return Activitelist;    
+    }
+     
+     //------------------------------------ Calculer nbAct -------------------------------------------//
+     public String calculer_nbAct(String Nom) {
+        String l = null ;
+        String requete ="SELECT COUNT(*) FROM activite where nom_a='"+Nom+"'"; 
+        try {
+           
+           Statement st =mc.createStatement();
+           ResultSet rs=st.executeQuery(requete);
+           if (rs.next()){
+          String chaine = String.valueOf(rs.getString(1));
+          l=chaine;
+            return l;}
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+      return l;
     }
 }
