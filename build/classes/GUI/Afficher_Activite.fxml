@@ -39,7 +39,7 @@
       <Button fx:id="del_act" layoutX="565.0" layoutY="204.0" mnemonicParsing="false" onAction="#supprimer_act" text="Supprimer" />
       <Button fx:id="upd_act" layoutX="565.0" layoutY="344.0" mnemonicParsing="false" onAction="#modifier_act" prefHeight="25.0" prefWidth="72.0" text="Modifier" />
       <Button fx:id="sort_act" layoutX="565.0" layoutY="117.0" mnemonicParsing="false" onAction="#sort_act" prefHeight="25.0" prefWidth="72.0" text="Trier" />
-      <Button fx:id="refresh_act" layoutX="565.0" layoutY="63.0" mnemonicParsing="false" onAction="#refresh_act" text="Rafraichir" />
+      <Button fx:id="count_act" layoutX="565.0" layoutY="63.0" mnemonicParsing="false" onAction="#Count_act" text="Rafraichir" />
       <Button fx:id="search_act" layoutX="565.0" layoutY="279.0" mnemonicParsing="false" onAction="#search_act" text="Rechercher" />
       <Button id="fermer" fx:id="fermer" layoutX="565.0" layoutY="25.0" mnemonicParsing="false" onAction="#close" text="Fermer" textFill="#fd0000">
          <font>

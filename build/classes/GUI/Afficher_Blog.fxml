@@ -5,20 +5,26 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="1061.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Afficher_BlogController">
+<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Afficher_BlogController">
    <children>
+      <ImageView fitHeight="687.0" fitWidth="1083.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Interface_sport.jpg" />
+         </image>
+      </ImageView>
       <TableView fx:id="table_blog" layoutX="143.0" layoutY="168.0" onMouseClicked="#liste_blog" prefHeight="382.0" prefWidth="712.0">
         <columns>
           <TableColumn id="Id_col" fx:id="Id_aff" prefWidth="75.0" text="Id_b" />
           <TableColumn id="titre_col" fx:id="titre_affich" prefWidth="103.0" text="Titre" />
             <TableColumn id="auteur_col" fx:id="auteur_aff" prefWidth="111.0" text="Auteur" />
             <TableColumn id="image_col" fx:id="image_aff" prefWidth="109.0" text="Image" />
-            <TableColumn id="contenu_col" fx:id="contenu_aff" prefWidth="127.0" text="Contenu" />
-            <TableColumn id="categorie_col" fx:id="categorie_aff" minWidth="0.0" prefWidth="102.0" text="categorie" />
+            <TableColumn id="contenu_col" fx:id="contenu_aff" prefWidth="113.6666259765625" text="Contenu" />
+            <TableColumn id="categorie_col" fx:id="categorie_aff" minWidth="0.0" prefWidth="115.3333740234375" text="categorie" />
             <TableColumn id="date_col" fx:id="date_aff" prefWidth="84.0" text="Date" />
         </columns>
       </TableView>
@@ -33,8 +39,7 @@
          </font>
       </Button>
       <TextField fx:id="recherche" layoutX="255.0" layoutY="566.0" prefHeight="31.0" prefWidth="271.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f4568" height="149.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="1068.0" />
-      <Label layoutX="303.0" layoutY="43.0" text="Affichage des Blogs" textFill="#000000fd">
+      <Label layoutX="303.0" layoutY="43.0" text="Affichage des Blogs" textFill="#e48808fc">
          <font>
             <Font name="Arial Black" size="42.0" />
          </font>

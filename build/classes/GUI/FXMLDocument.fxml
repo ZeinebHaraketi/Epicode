@@ -21,7 +21,7 @@
                               <Image url="@../Assets/Interface_sport.jpg" />
                            </image>
                         </ImageView>
-                        <Label layoutX="338.0" layoutY="56.0" text="Accueil  Parc Enfant" textAlignment="CENTER" textFill="#f5a422">
+                        <Label layoutX="338.0" layoutY="56.0" text="Accueil  &lt; Feel The Burn &gt;" textAlignment="CENTER" textFill="#f5a422">
                            <font>
                               <Font name="System Bold Italic" size="36.0" />
                            </font>
@@ -50,8 +50,35 @@
                               <Image url="@../Assets/commentaire.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="gerer_cours" layoutX="801.0" layoutY="401.0" mnemonicParsing="false" onAction="#gerer_cours" prefHeight="49.0" prefWidth="190.0" text="Gestion Cours" />
-                        <Button fx:id="gerer_coaching" layoutX="803.0" layoutY="465.0" mnemonicParsing="false" onAction="#gerer_coaching" prefHeight="44.0" prefWidth="191.0" text="Gestion Coaching" />
+                        <Button fx:id="gerer_cours" layoutX="801.0" layoutY="401.0" mnemonicParsing="false" onAction="#gerer_cours" prefHeight="49.0" prefWidth="190.0" text="             Gestion Cours" />
+                        <Button fx:id="gerer_coaching" layoutX="803.0" layoutY="465.0" mnemonicParsing="false" onAction="#gerer_coaching" prefHeight="44.0" prefWidth="191.0" text="                    Gestion Coaching" />
+                        <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="810.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/cours_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="65.0" layoutX="812.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/coaching_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="121.0" fitWidth="186.0" layoutX="23.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/logo_epicode.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="gerer_produit" layoutX="590.0" layoutY="141.0" mnemonicParsing="false" onAction="#gerer_produit" prefHeight="52.0" prefWidth="190.0" text="                   Gestion Produit" />
+                        <Button fx:id="gerer_panier" layoutX="590.0" layoutY="202.0" mnemonicParsing="false" onAction="#gerer_panier" prefHeight="52.0" prefWidth="190.0" text="                   Gestion Panier" />
+                        <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="600.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/panier_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="68.0" fitWidth="44.0" layoutX="596.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/produit_icon.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
               </content>
