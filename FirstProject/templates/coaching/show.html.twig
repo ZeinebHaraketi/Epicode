@@ -1,0 +1,42 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Coaching{% endblock %}
+
+{% block body %}
+    <h1>Coaching</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdS</th>
+                <td>{{ coaching.idS }}</td>
+            </tr>
+            <tr>
+                <th>DateS</th>
+                <td>{{ coaching.dateS }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ coaching.prix }}</td>
+            </tr>
+            <tr>
+                <th>IdCo</th>
+                <td>{{ coaching.idCo }}</td>
+            </tr>
+            <tr>
+                <th>NomUser</th>
+                <td>{{ coaching.nomUser }}</td>
+            </tr>
+            <tr>
+                <th>PrenomUser</th>
+                <td>{{ coaching.prenomUser }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_coaching_index') }}">back to list</a>
+
+    <a href="{{ path('app_coaching_edit', {'idS': coaching.idS}) }}">edit</a>
+
+    {{ include('coaching/_delete_form.html.twig') }}
+{% endblock %}

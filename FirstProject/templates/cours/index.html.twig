@@ -1,0 +1,47 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Cours index{% endblock %}
+
+{% block body %}
+    <h1>Cours index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{knp_pagination_sortable(cours,'idC','idC')  }}</th>
+                <th>{{knp_pagination_sortable(cours,'NomC','NomC')  }}</th>
+                <th>{{knp_pagination_sortable(cours,'DateC','DateC')  }}</th>
+                <th>{{knp_pagination_sortable(cours,'IdCo','IdCo')  }}</th>
+                <th>ImageCours</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cour in cours %}
+            <tr>
+                <td>{{ cour.idC }}</td>
+                <td>{{ cour.nomC }}</td>
+                <td>{{ cour.dateC }}</td>
+                <td>{{ cour.idCo }}</td>
+                 <td><img src="{{ asset('uploads/' ~ cour.ImageCours) }}"
+                alt="" width="100" height="100">
+                </td>
+                
+                <td>
+                    <a href="{{ path('app_cours_show', {'idC': cour.idC}) }}">show</a>
+                    <a href="{{ path('app_cours_edit', {'idC': cour.idC}) }}">edit</a>
+                </td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+                  
+    </table>
+    {{ knp_pagination_render(cours) }}  
+
+    <a href="{{ path('app_cours_new') }}">Create new</a>
+{% endblock %}

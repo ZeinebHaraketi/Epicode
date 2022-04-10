@@ -1,0 +1,38 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+    <h1>Cours</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdC</th>
+                <td>{{ cour.idC }}</td>
+            </tr>
+            <tr>
+                <th>NomC</th>
+                <td>{{ cour.nomC }}</td>
+            </tr>
+            <tr>
+                <th>DateC</th>
+                <td>{{ cour.dateC }}</td>
+            </tr>
+            <tr>
+                <th>IdCo</th>
+                <td>{{ cour.idCo }}</td>
+            </tr>
+            <tr>
+                <th>ImageCours</th>
+                <td>{{ cour.ImageCours }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cours_index') }}">back to list</a>
+
+    <a href="{{ path('app_cours_edit', {'idC': cour.idC}) }}">edit</a>
+
+    {{ include('cours/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Coaching index{% endblock %}
+
+{% block body %}
+    <h1>Coaching index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdS</th>
+                <th>DateS</th>
+                <th>Prix</th>
+                <th>IdCo</th>
+                <th>NomUser</th>
+                <th>PrenomUser</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coaching in coachings %}
+            <tr>
+                <td>{{ coaching.idS }}</td>
+                <td>{{ coaching.dateS }}</td>
+                <td>{{ coaching.prix }}</td>
+                <td>{{ coaching.idCo }}</td>
+                <td>{{ coaching.nomUser }}</td>
+                <td>{{ coaching.prenomUser }}</td>
+                <td>
+                    <a href="{{ path('app_coaching_show', {'idS': coaching.idS}) }}">show</a>
+                    <a href="{{ path('app_coaching_edit', {'idS': coaching.idS}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_coaching_new') }}">Create new</a>
+{% endblock %}
